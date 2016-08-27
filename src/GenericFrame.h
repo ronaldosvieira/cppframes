@@ -8,8 +8,9 @@
 #ifndef CLASSES_GENERICFRAME_H_
 #define CLASSES_GENERICFRAME_H_
 
+#include <functional>
+
 #include "Frame.h"
-#include "boost/any.hpp"
 
 namespace Model {
 
@@ -20,7 +21,7 @@ public:
 
 private:
 	const GenericFrame* isA;
-	std::map<std::string, boost::any> procedures;
+	std::map<std::string, std::function> procedures;
 };
 
 } /* namespace Model */

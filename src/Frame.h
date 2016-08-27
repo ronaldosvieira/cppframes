@@ -11,24 +11,21 @@
 
 #include <string>
 #include <map>
-#include "boost/variant.hpp"
+
+#include "Property.h"
 
 namespace Model {
 
 class Frame {
-typedef boost::variant<int, float, std::string, Frame*> PropertyValue;
 
 public:
 	Frame();
 	virtual ~Frame();
 
-	virtual PropertyValue getPropertyValue(std::string property) = 0;
+	virtual Property* getPropertyValue(std::string property) = 0;
 
 private:
-	std::map<
-		std::string,
-		boost::variant<int, float, std::string, Frame*>
-	> properties;
+	std::map<std::string, Property*> properties;
 };
 
 } /* namespace Model */
