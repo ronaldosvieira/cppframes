@@ -32,6 +32,10 @@ const T* Property::get() const {
 	return nullptr;
 }
 
+const std::type_info& Property::getType() const {
+	return this->info;
+}
+
 template<typename T>
 void Property::set(const T& value) {
 	if (typeid(T) == this->info) {

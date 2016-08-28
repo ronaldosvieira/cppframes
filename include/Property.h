@@ -26,6 +26,8 @@ public:
 	template<typename T>
 	void set(const T& value);
 
+	const std::type_info& getType() const;
+
 	template<typename T>
 	static Property* create(const T& value);
 
