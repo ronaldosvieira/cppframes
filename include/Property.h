@@ -13,20 +13,23 @@
 #include <cstdlib>
 
 #include <typeinfo>
+#include <cxxabi.h>
 
 namespace Model {
+
+std::string demangle(const char * mangled);
 
 class Property {
 public:
 	~Property();
 
 	template<typename T>
-	const T* get() const;
+	const T get() const;
 
 	template<typename T>
 	void set(const T& value);
 
-	const std::type_info& getType() const;
+	inline const std::type_info& getType() const;
 
 	template<typename T>
 	static Property* create(const T& value);

@@ -9,8 +9,8 @@
 
 namespace Model {
 
-Property::Property(const void* value, std::size_t size, const std::type_info& info) :
-	value(operator new (size)), info(info) {
+Property::Property(const void* value, std::size_t size, const std::type_info& info)
+	: value(operator new (size)), info(info) {
 	this->value = const_cast<void *>(value);
 }
 
@@ -24,15 +24,17 @@ Property* Property::create(const T& value) {
 }
 
 template<typename T>
-const T* Property::get() const {
+const T Property::get() const {
 	if (typeid(T) == this->info) {
-		return static_cast<const T*>(this->value);
-	}
+		auto temp = static_cast<const T*>(this->value);
 
-	return nullptr;
+		return *temp;
+	} else {
+		throw std::bad_cast();
+	}
 }
 
-const std::type_info& Property::getType() const {
+inline const std::type_info& Property::getType() const {
 	return this->info;
 }
 
