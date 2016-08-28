@@ -24,7 +24,7 @@ public:
 
 	virtual Property* getPropertyValue(std::string property) = 0;
 
-private:
+protected:
 	std::map<std::string, Property*> properties;
 };
 
