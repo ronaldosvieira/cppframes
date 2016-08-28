@@ -18,4 +18,8 @@ InstanceFrame::~InstanceFrame() {
 	// TODO Auto-generated destructor stub
 }
 
+Property* InstanceFrame::getPropertyValue(std::string property) {
+	return this->properties[property];
+}
+
 } /* namespace Model */

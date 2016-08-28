@@ -18,6 +18,8 @@ public:
 	InstanceFrame(const GenericFrame* instanceOf);
 	virtual ~InstanceFrame();
 
+	Property* getPropertyValue(std::string property);
+
 private:
 	const GenericFrame* instanceOf;
 };
