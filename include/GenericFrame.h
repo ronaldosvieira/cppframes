@@ -21,7 +21,7 @@ public:
 
 private:
 	const GenericFrame* isA;
-	std::map<std::string, std::function> procedures;
+	std::map<std::string, std::function<void()>> procedures;
 };
 
 } /* namespace Model */

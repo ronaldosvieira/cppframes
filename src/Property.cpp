@@ -19,7 +19,7 @@ Property::~Property() {
 }
 
 template<typename T>
-static Property* Property::create(const T& value) {
+Property* Property::create(const T& value) {
 	return new Property(static_cast<const void *>(&value), sizeof(T), typeid(T));
 }
 
