@@ -45,7 +45,23 @@ void Property::set(const T& value) {
 		*v = value;
 	} else {
 		printf("Error: parameter type: %s member type: %s\n",
-				typeid(T).name(), this->info.name());
+				demangle(typeid(T).name()).c_str(),
+				demangle(this->info.name()).c_str());
+	}
+}
+
+std::string demangle(const char * mangled) {
+	int status;
+
+	char* c_demangled = abi::__cxa_demangle(mangled, nullptr, 0, &status);
+
+	if (status == 0) {
+		std::string demangled(c_demangled);
+		free(c_demangled);
+
+		return demangled;
+	} else {
+		throw std::runtime_error("Error demangling name");
 	}
 }
 
