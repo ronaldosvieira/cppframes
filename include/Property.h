@@ -14,6 +14,7 @@
 
 #include <typeinfo>
 #include <cxxabi.h>
+#include <stdexcept>
 
 namespace Model {
 
