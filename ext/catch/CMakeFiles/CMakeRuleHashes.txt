@@ -1,0 +1,10 @@
+# Hashes of file build rules.
+7a75d37c253cc7dc634b27df047ac66c CMakeFiles/catch
+8c80fd3a9b9075de4b3fa671115955d9 CMakeFiles/catch-complete
+a28250af680c1b18bde78c45662b8eae catch/src/catch-stamp/catch-build
+9c44a30966ca241b03ab7558c0dabd8c catch/src/catch-stamp/catch-configure
+cfeaacb3a596dabae8d33237383186d7 catch/src/catch-stamp/catch-download
+8691377ce71d45247ddf42c1e33d753a catch/src/catch-stamp/catch-install
+71935a209bfe724e4c24c504ccd0c4e7 catch/src/catch-stamp/catch-mkdir
+4df53d48372b719aba233110d34d7c15 catch/src/catch-stamp/catch-patch
+7feed98438ddb0c4c3aeca41a37568a0 catch/src/catch-stamp/catch-update
